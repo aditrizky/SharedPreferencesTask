@@ -9,13 +9,13 @@ import com.binar.sharedpreferancesample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-
+        private val sharedPreffile = "kotlinsharedpreferance"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val sharedPreferences : SharedPreferences = this.getSharedPreferences(
-            this.toString(),
+            sharedPreffile,
             Context.MODE_PRIVATE)
 
         binding.btnSave.setOnClickListener {
